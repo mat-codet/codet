@@ -23,6 +23,26 @@
     <h2 style="text-align:center;">Video Kuy</h2>
 
     <div class="video-container">
+
+        <div id="iklan" style="text-align:center;">
+    <p>Klik iklan untuk melanjutkan</p>
+    <a href="LINK_SMARTLINK_KAMU" target="_blank">
+        <button>Lanjutkan</button>
+    </a>
+</div>
+
+<div id="video" class="video-container" style="display:none;">
+    <video controls>
+        <source src="New-Assintant.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+document.querySelector("#iklan button").onclick = function() {
+    document.getElementById("iklan").style.display = "none";
+    document.getElementById("video").style.display = "block";
+}
+</script>
         <video controls>
             <source src="New-Assintant.mp4" type="video/mp4">
             Browser Anda tidak mendukung video.
