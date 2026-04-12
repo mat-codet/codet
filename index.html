@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Video Player</title>
+    <title>Video Responsif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Video Saya</h2>
-    <video width="360" height="640" controls>
-        <source src="New Assintant.mp4" type="New Assintant/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
+
+    <h2 style="text-align:center;">Video Pembelajaran</h2>
+
+    <div class="video-container">
+        <video controls>
+            <source src="New Assintant.mp4" type="New Assintant/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+    </div>
+
 </body>
 </html>
