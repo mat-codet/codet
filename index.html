@@ -29,6 +29,39 @@
         </video>
     </div>
 
+<
+Saya memiliki kode seperti di bawah
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chudai Japan Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">New Asisstant</h2>
+
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="New-Assintant.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+    </div>
+
 <script>
 let sudahKlik = false;
 
@@ -36,6 +69,65 @@ document.getElementById("myVideo").addEventListener("play", function() {
     if (!sudahKlik) {
         window.open("https://welcomingexpulsion.com/rngyw08fwz?key=74e75212c98246729cf2c31fb84b80a1", "_blank");
         sudahKlik = true;
+    }
+});
+</script>
+    
+</body>
+</html>
+
+
+Tolong ubah agar saat orang akan play video butuh 3 kali klik baru video berjalan
+
+Untuk membuat video baru benar-benar diputar setelah 3 kali klik, kamu tidak bisa lagi mengandalkan event "play" saja, karena itu terjadi saat video sudah mulai berjalan. Jadi kita harus mencegah play dulu, lalu hitung jumlah klik user.
+
+Berikut versi yang sudah diubah:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chudai Japan Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">New Assistant</h2>
+
+<div class="video-container">
+    <video id="myVideo" controls>
+        <source src="New-Assintant.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+</div>
+
+<script>
+let jumlahKlik = 0;
+const video = document.getElementById("myVideo");
+
+// cegah autoplay/play langsung
+video.addEventListener("click", function(e) {
+    jumlahKlik++;
+
+    if (jumlahKlik < 3) {
+        e.preventDefault();
+        video.pause();
+        alert("Klik " + (3 - jumlahKlik) + " kali lagi untuk memutar video");
+    } else if (jumlahKlik === 3) {
+        video.play();
     }
 });
 </script>
